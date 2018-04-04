@@ -22,10 +22,10 @@ const query = new GraphQLObjectType({
           type: new GraphQLList(PlaceEmbeddedType)
         }
       },
-      resolve: (_, { q, types }) =>
+      resolve: (_, { q, types }, context) =>
         Navitia.places(q, {
           ...(types && types.length ? { type: types } : {})
-        }).then(json => json.places || [])
+        }, context).then(json => json.places || [])
     }
   })
 });
