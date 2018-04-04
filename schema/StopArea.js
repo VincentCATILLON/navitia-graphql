@@ -23,7 +23,7 @@ export default new GraphQLObjectType({
     stop_points: { type: new GraphQLList(StopPoint) },
     lines: {
       type: new GraphQLList(Line),
-      resolve: stop => Navitia.stopLines('stop_area', stop.id).then(json => json.lines || [])
+      resolve: (stop, args, context) => Navitia.stopLines('stop_area', stop.id, {}, context).then(json => json.lines || [])
     }
   })
 })

@@ -22,7 +22,7 @@ yarn
 
 Sign up to <a href="https://navitia.io/register" rel="noopener" target="_blank">Navitia.io</a> and get started with your free plan.
 
-Create an application to get a token and define it in `navitia.json` file.
+Create an application to get a token.
 
 ## Usage
 
@@ -30,13 +30,18 @@ Create an application to get a token and define it in `navitia.json` file.
 yarn start
 ```
 
-And fetch your <a href="http://localhost:4000" rel="noopener" target="_blank">local API</a>.
+And fetch your <a href="http://localhost:4000/graphql" rel="noopener" target="_blank">local API</a> with the following headers:
+
+```sh
+Authorization: Basic <base64(token + ':')>
+X-Navitia-Coverage: <coverage>
+```
 
 ## Let's play!
 
-You can use <a href="https://github.com/graphql/graphiql" rel="noopener" target="_blank">GraphiQL</a>.
+You can use <a href="https://github.com/graphql/graphiql" rel="noopener" target="_blank">GraphiQL</a> to build your own requests.
 
-For this, you have to set `NODE_ENV` environment variable:
+You have 2 choices, using the <a href="https://navitia-graphiql.herokuapp.com/graphiql">demo</a> or running it locally:
 
 ```sh
 NODE_ENV=debug yarn start
