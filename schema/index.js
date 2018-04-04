@@ -1,10 +1,10 @@
 // @flow
 
-import { GraphQLObjectType, GraphQLList, GraphQLSchema, GraphQLNonNull, GraphQLString } from 'graphql'
+import { GraphQLObjectType, GraphQLList, GraphQLSchema, GraphQLNonNull, GraphQLString } from 'graphql';
 
-import Place from './Place'
-import PlaceEmbeddedType from './PlaceEmbeddedType'
-import Navitia from '../modules/apis/Navitia'
+import Place from './Place';
+import PlaceEmbeddedType from './PlaceEmbeddedType';
+import Navitia from '../modules/apis/Navitia';
 
 const query = new GraphQLObjectType({
   name: 'Schema',
@@ -28,8 +28,8 @@ const query = new GraphQLObjectType({
         }).then(json => json.places || [])
     }
   })
-})
+});
 
 export default new GraphQLSchema({
   query
-})
+});
